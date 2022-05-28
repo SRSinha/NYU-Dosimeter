@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_page">
+
+
+        <ImageButton
+            android:id="@+id/backbutton"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="left|top"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/graphbackicon"
+            android:visibility="visible"
+            android:scaleType="fitCenter"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20pt"
+            android:text="Pitch Insights"
+            android:textSize="20dp"
+            android:layout_gravity="center_horizontal"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:ems="7"
+            android:hint="Select Date"
+            android:textColorHint="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/white"/>
+        <Button
+            android:id="@+id/buttonW"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText1"
+            android:text="Weekly"
+            />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText1"
+            android:text="Hourly" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/graphchartcontainerHour"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginBottom="20dp"
+        >
+    <!--        android:visibility="invisible"-->
+
+<!--        <com.github.mikephil.charting.charts.BarChart-->
+<!--            android:id="@+id/graphBARChart_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"/>-->
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/graphCOMBChart_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3pt"
+            android:layout_marginRight="3pt" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20pt"
+        android:layout_marginBottom="5pt">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Average"
+            android:textSize="20dp"
+            android:layout_gravity=""
+            android:textColor="#ffffff"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Pitch"
+            android:textSize="20dp"
+            android:layout_gravity=""
+            android:textColor="#AE0C6E"
+            />
+        <TextView
+            android:id="@+id/avgPitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10pt"
+            android:textSize="20dp"
+            android:layout_gravity=""
+            android:textColor="#A2D3E2"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20pt"
+        android:layout_marginBottom="5pt">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total "
+            android:textSize="20dp"
+            android:layout_gravity=""
+            android:textColor="#ffffff"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phonation Time: "
+            android:textSize="20dp"
+        android:layout_gravity=""
+        android:textColor="#FFFF00"
+        />
+        <TextView
+            android:id="@+id/phonationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10pt"
+            android:textSize="20dp"
+            android:layout_gravity=""
+            android:textColor="#8FD0CA"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20pt"
+        android:layout_marginBottom="5pt"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Cycle Dose: "
+            android:textSize="20dp"
+            android:layout_gravity=""
+            android:textColor="#ffffff"
+            />
+        <TextView
+            android:id="@+id/totalCycleDose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10pt"
+            android:textSize="20dp"
+            android:layout_gravity=""
+            android:textColor="#A2D3E2"
+            />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/graphchartcontainerMinHour"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginBottom="20dp"
+        >
+
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/graphCOMBChart_view_Min"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3pt"
+            android:layout_marginRight="3pt" />
+    </RelativeLayout>
+</LinearLayout>

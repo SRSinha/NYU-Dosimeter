@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_page"
+    android:orientation="vertical"
+    tools:context="com.example.dosime.MainActivityNew">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <com.example.dosime.Speedometer
+            android:id="@+id/speed"
+            android:layout_width="367dp"
+            android:layout_height="167dp"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp" />
+
+        <ImageButton
+            android:id="@+id/infobutton"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="right|top"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="16dp"
+            android:onClick="openGraph"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/activity_infobutton"
+            android:visibility="visible"
+            android:scaleType="fitCenter"
+            android:elevation="20dp"
+            android:src="@drawable/graphiconnew" />
+
+        <ImageButton
+            android:id="@+id/refreshbutton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="left|top"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/refresh"
+            android:visibility="invisible"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="54dp"
+            android:id="@+id/eggbutton"
+            android:layout_gravity="left|bottom"
+			android:src="@drawable/graphiconnew"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+			android:visibility="gone"
+            android:scaleType="fitCenter" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="348dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/minlabel"
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_minlabel"
+                android:textColor="@color/external_progress2" />
+
+            <TextView
+                android:id="@+id/minval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23"
+                android:textColor="#ffffff"
+                android:textSize="23dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/avglabel"
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_avglabel"
+                android:textColor="@color/external_progress2" />
+
+            <TextView
+                android:id="@+id/mmval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23"
+                android:textColor="#ffffff"
+                android:textSize="23dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/maxlabel"
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_maxlabel"
+                android:textColor="@color/external_progress2" />
+
+            <TextView
+                android:id="@+id/maxval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23"
+                android:textColor="#ffffff"
+                android:textSize="23dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/curlabel"
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_curlabel"
+                android:textColor="@color/material_on_primary_emphasis_high_type" />
+
+            <TextView
+                android:id="@+id/curval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23 Db"
+                android:textColor="#ffffff"
+                android:textSize="23dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/chartcontainer"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginBottom="20dp">
+        <!--        android:visibility="invisible"-->
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="348dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/minPlabel"
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_minlabel"
+                android:textColor="@color/external_progress2" />
+
+            <TextView
+                android:id="@+id/minPval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23"
+                android:textColor="#ffffff"
+                android:textSize="23dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/avgPlabel"
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_avglabel"
+                android:textColor="@color/external_progress2" />
+
+            <TextView
+                android:id="@+id/mmPval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23"
+                android:textColor="#ffffff"
+                android:textSize="23dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/maxPlabel"
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_maxlabel"
+                android:textColor="@color/external_progress2" />
+
+            <TextView
+                android:id="@+id/maxPval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23"
+                android:textColor="#ffffff"
+                android:textSize="23dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pitchlabel"
+                style="@style/Uy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_pitchlabel"
+                android:textColor="@color/material_on_primary_emphasis_high_type" />
+
+            <TextView
+                android:id="@+id/curPval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 Hz"
+                android:textColor="#ffffff"
+                android:textSize="23dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/chartcontainerPitch"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginBottom="20dp">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chartPitch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp" />
+    </RelativeLayout>
+
+</LinearLayout>
